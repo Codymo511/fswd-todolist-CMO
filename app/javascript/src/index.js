@@ -10,9 +10,9 @@ import {
 indexTasks(function (response) {
   var htmlString = response.tasks.map(function(task) {
     return "<div class='col-12 mb-3 p-2 border rounded task' data-id='" + task.id + "'> \
-      " + task.content + "  \
-      </div><button class='delete-task' data-id='" + task.id + "'> Delete </button>";
-  });
+      " + task.content + " \
+      </div><button class='delete-task' data-id='" + task.id + "'> Delete </button>"  
+  },)
 
   $("#tasks").html(htmlString);
 });
