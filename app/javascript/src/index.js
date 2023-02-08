@@ -16,16 +16,7 @@ function refreshList() {
   indexTasks(function (response) {
     var htmlString = response.tasks.map(function (task) {
       return (
-        "<div class='col-12 mb-3 p-2 border rounded task' data-id='" +
-        task.id +
-        "'> \
-        " +
-        task.content +
-        " \
-        </div><button class='delete-task' data-id='" +
-        task.id +
-        "'> Delete </button>"
-      );
+        '<div class="container"><div class="tasks-row"><div class="content">' + task.content + '</div><div class="col"><button class="delete" data-id="' + task.id + '">Delete</button></div><div class="col"><input type="checkbox" class="mark-complete" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '</div></div>');
     });
 
     $("#tasks").html(htmlString);
@@ -39,7 +30,7 @@ $(document).on('submit','#create-task',function(event){
   $('#new-task-content').val('')
 })
 
-$(document).on('click','.delete-task',function(){
+$(document).on('click','.delete',function(){
   var id = $(this).data('id');
   deleteTask(id, refreshList)
 })
