@@ -13,6 +13,5 @@ Rails.application.routes.draw do
     delete 'tasks/:id'                => 'tasks#destroy'
   end
 
-  get '*path' => redirect('/')
   
 end
