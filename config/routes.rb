@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   namespace :api do  
-    resources only: [:create]
+    resources :users, only: [:create]
 
     get    'tasks'                    => 'tasks#index'
     post   'tasks'                    => 'tasks#create'
