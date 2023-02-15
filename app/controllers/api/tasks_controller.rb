@@ -81,12 +81,6 @@ module Api
           detail: 'User is not found.'
         }, status: :unauthorized
       end
-  
-      if user
-        true
-      else
-        false
-      end
     end
    end
   end
