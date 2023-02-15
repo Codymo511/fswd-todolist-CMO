@@ -72,15 +72,7 @@ module Api
       params.require(:task).permit(:content, :due)
     end
   
-    def validate_user
-      user = User.find_by(id: params[:api_key])
-      unless user
-        return render json: {
-          status: '401',
-          title: 'Unauthorized User',
-          detail: 'User is not found.'
-        }, status: :unauthorized
-      end
+    
     end
    end
   end
